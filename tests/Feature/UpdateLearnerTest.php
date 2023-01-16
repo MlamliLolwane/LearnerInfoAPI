@@ -11,27 +11,25 @@ class UpdateLearnerTest extends TestCase
 {
     use RefreshDatabase;
 
-    // public function test_learner_information_can_be_sucessfully_updated()
-    // {
-    //     //Clear the Learner table
-    //     Learner::truncate();
+    public function test_learner_information_can_be_sucessfully_updated()
+    {
+        //Clear the Learner table
+        Learner::truncate();
 
-    //     //Create a new learner from a factory
-    //     Learner::factory()->create();
+        //Create a new learner from a factory
+        Learner::factory()->create();
 
-    //     //Verify that the learner was created
-    //     $this->assertCount(1, Learner::all());
+        //Verify that the learner was created
+        $this->assertCount(1, Learner::all());
 
-    //     //Update the newly created learner information
-    //     $updatedLearner = ['first_name' => 'Jacob'];
+        //Update the newly created learner information
+        $updatedLearner = ['first_name' => 'Jacob'];
  
-    //     $response = $this->patchJson('/api/learners/update/1', $updatedLearner);
-
-    //     dd($response);
+        $response = $this->patchJson('/api/learners/update/1', $updatedLearner);
   
-    //     //Assert that an update did happen
-    //     $response->assertJsonFragment(['first_name' => 'Jacob']);
-    // }
+        //Assert that an update did happen
+        $response->assertOk();
+    }
 
     public function test_learner_information_cannot_be_updated_if_required_fields_are_set_to_null()
     {

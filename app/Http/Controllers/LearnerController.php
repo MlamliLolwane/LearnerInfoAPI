@@ -54,20 +54,18 @@ class LearnerController extends Controller
         return response($learner, Response::HTTP_OK);
     }
 
-    
-    public function update(UpdateLearnerRequest $request, Learner $learner)
+
+    public function update(UpdateLearnerRequest $request, $learner_id)
     {
         $request->validated();
 
-        $learner->first_name = $request->first_name;
+        try {
+            $updated_learner = Learner::where('id', $learner_id)->update($request->all());
 
-        $learner->last_name = $request->last_name;
-
-        $learner->contact_id = $request->contact_id;
-
-        $learner->save();
-
-        return response()->json($learner, Response::HTTP_OK);
+            return response()->json($updated_learner, Response::HTTP_OK);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
     }
 
     /**
