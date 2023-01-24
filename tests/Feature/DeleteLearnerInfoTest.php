@@ -2,19 +2,16 @@
 
 namespace Tests\Feature;
 
-use App\Models\Learner;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Models\Learner;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class DeleteLearnerInfoTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseMigrations;
 
     public function test_learner_info_can_be_deleted()
     {
-        Learner::truncate();
-
         //Create 10 learners
         Learner::factory()->count(10)->create();
 

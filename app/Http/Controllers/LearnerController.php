@@ -16,9 +16,9 @@ class LearnerController extends Controller
      */
     public function index()
     {
-        $learners = Learner::paginate(15);
+        $learners = Learner::all();
 
-        return response()->json($learners, Response::HTTP_OK);
+        return response()->json(['data' => $learners], Response::HTTP_OK);
     }
 
     /**

@@ -2,14 +2,13 @@
 
 namespace Tests\Feature;
 
-use App\Models\Learner;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Models\Learner;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class UpdateLearnerTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseMigrations;
 
     public function test_learner_information_can_be_sucessfully_updated()
     {

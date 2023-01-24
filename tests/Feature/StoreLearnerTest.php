@@ -2,20 +2,16 @@
 
 namespace Tests\Feature;
 
-use App\Models\Learner;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Models\Learner;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class StoreLearnerTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseMigrations;
 
     public function test_learner_can_be_created_successfully()
     {
-        //Delete everything in the learner table
-        Learner::truncate();
-
         //Send a valid request
         $this->postJson('/api/learners/store', [
             'first_name' => 'Mlamli',
