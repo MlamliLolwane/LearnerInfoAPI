@@ -2,7 +2,7 @@
   <img
   src="Learner Info API ERD.png"
   alt="Learner Information API ERD">
-  <figcaption>Learner Information API ERD</figcaption>
+  <figcaption>The Entity Relational Diagram for the Learner Information API</figcaption>
 </figure>
 
 ### iLetters - Learner Information API
