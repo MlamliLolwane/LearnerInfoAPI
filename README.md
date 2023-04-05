@@ -1,3 +1,10 @@
+<figure>
+  <img
+  src="Learner Info API ERD.png"
+  alt="Learner Information API ERD">
+  <figcaption>Learner Information API ERD</figcaption>
+</figure>
+
 ### iLetters - Learner Information API
 
 This microservice is responsible for storing as well as manipulating the information of the learners such as the names
