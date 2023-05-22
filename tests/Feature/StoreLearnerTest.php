@@ -15,8 +15,7 @@ class StoreLearnerTest extends TestCase
         //Send a valid request
         $this->postJson('/api/learners/store', [
             'first_name' => 'Mlamli',
-            'last_name' => 'Lolwane',
-            'contact_id' => 1
+            'last_name' => 'Lolwane'
         ]);
 
         //Assert that the record was created in the database
@@ -30,7 +29,7 @@ class StoreLearnerTest extends TestCase
 
         //Assert that the request was invalid as it was missing the required fields
         $response->assertInvalid([
-            'first_name', 'last_name', 'contact_id'
+            'first_name', 'last_name'
         ]);
     }
 }

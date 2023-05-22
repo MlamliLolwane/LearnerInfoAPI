@@ -15,6 +15,6 @@ class LearnerSeeder extends Seeder
     public function run()
     {
         //Create 50 learners
-        Learner::factory()->count(25000)->create();
+        Learner::factory()->count(1000)->create();
     }
 }

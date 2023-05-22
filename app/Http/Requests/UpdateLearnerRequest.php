@@ -25,8 +25,7 @@ class UpdateLearnerRequest extends FormRequest
     {
         return [
             'first_name' => 'max:50|min:2',
-            'last_name' => 'max:50|min:2',
-            'contact_id' => 'integer'
+            'last_name' => 'max:50|min:2'
         ];
     }
 }

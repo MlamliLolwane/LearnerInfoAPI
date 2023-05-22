@@ -6,6 +6,7 @@ use App\Models\Learner;
 use App\Http\Requests\StoreLearnerRequest;
 use App\Http\Requests\UpdateLearnerRequest;
 use Illuminate\Http\Response;
+use Monolog\Handler\RedisPubSubHandler;
 
 class LearnerController extends Controller
 {
@@ -33,8 +34,7 @@ class LearnerController extends Controller
 
         $learner = Learner::create([
             'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'contact_id' => $request->contact_id
+            'last_name' => $request->last_name
         ]);
 
         return response()->json($learner, Response::HTTP_CREATED);
@@ -52,6 +52,13 @@ class LearnerController extends Controller
         $learner = Learner::findOrFail($learner_id);
 
         return response($learner, Response::HTTP_OK);
+    }
+
+    public function last_learner()
+    {
+        $learner = Learner::orderBy('id', 'desc')->first();
+
+        return response()->json(['data' => $learner], Response::HTTP_OK);
     }
 
 
@@ -79,5 +86,11 @@ class LearnerController extends Controller
         $learner = Learner::where('id', $learner_id)->delete();
 
         return response()->json($learner, Response::HTTP_OK);
+    }
+
+    public function count_learners(){
+        $learners = Learner::all()->count();
+
+        return response()->json(['data' => $learners], Response::HTTP_OK);
     }
 }

@@ -25,8 +25,7 @@ class StoreLearnerRequest extends FormRequest
     {
         return [
             'first_name' => 'required|max:50|min:2',
-            'last_name' => 'required|max:50|min:2',
-            'contact_id' => 'required|integer',
+            'last_name' => 'required|max:50|min:2'
         ];
     }
 }

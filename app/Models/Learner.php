@@ -12,7 +12,6 @@ class Learner extends Model
 
     protected $fillable = [
         'first_name',
-        'last_name',
-        'contact_id'
+        'last_name'
     ];
 }

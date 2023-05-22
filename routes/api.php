@@ -18,5 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/learners/store', [LearnerController::class, 'store']);
 Route::get('/learners/index', [LearnerController::class, 'index']);
 Route::get('/learners/show/{learner_id}', [LearnerController::class, 'show']);
+Route::get('/learners/last_learner', [LearnerController::class, 'last_learner']);
 Route::patch('/learners/update/{learner_id}', [LearnerController::class, 'update']);
 Route::delete('/learners/destroy/{id}', [LearnerController::class, 'destroy']);
+Route::get('/learners/count', [LearnerController::class, 'count_learners']);

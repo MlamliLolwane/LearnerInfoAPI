@@ -17,7 +17,6 @@ class CreateLearnersTable extends Migration
             $table->id();
             $table->text('first_name');
             $table->text('last_name');
-            $table->integer('contact_id');
             $table->softDeletes();
             $table->timestamps();
         });
